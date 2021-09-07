@@ -5,7 +5,7 @@
 
 using namespace std;
 	
-	int a, b, c, d;
+	int a, b, c, d, z;
 	string e, f, g;
 	float h, i, j;
 	
@@ -114,8 +114,12 @@ int pro5(){
 	cout<<"--------Conversor de arabigos a romanos-------";
 };
 
-int pro6(){
-	string uni[10], diez[6], dec[10];
+int pro6(int aa){
+	string *uni, *diez, *dec, *cen;
+	uni = new string [10];
+	diez = new string [10];
+	dec = new string [10];
+	cen = new string [10];
 	uni[0] = "cero";
 	uni[1] = "uno";
 	uni[2] = "dos";
@@ -141,69 +145,84 @@ int pro6(){
 	dec[8] = "ochenta";
 	dec[9] = "noventa";
 	dec[1] = "diez";
-	
-
-	
-	
-	
+	cen[5] = "quinientos ";
+	cen[7] = "setecientos ";
+	cen[9] = "novecientos ";
 	
 	
 	
-	
-	
-	
-	cout<<"---------Conversor de arabigos a letras--------\n\n";
-	cout<<"Ingresa un numero: ";
-	cin>>a;
-	b = a/100;
-	c = (a/10)%10;
-	d = a%10;
-	
-	if(b==0 && c==0){
-		e = uni[d];
+	if(aa>1001 || aa<0){
+		do{
+		
+		cout<<"Ingresa un numero correcto por favor... ";
+		cin>>aa;
+		}while(aa>1001 || aa<0);
 	}
 	
-	if(c==1 && d>=1 && d<=5){
-		e = diez[d];
-	};
-	
-	if(c==1 && d>5){
-		e = "diez y "+uni[d];
-	}
-	
-	if(c==2 && d>0){
-		e = "veinti"+uni[d];
-	}
-	
-	if(c>0 && d==0){
-		e = dec[c];
-	}else if(c>0 && c!=1 && c!=2 && d>0){
-		e = dec[c] + " y " + uni[d];
-	};
-	
-	f = "";
-	if(a==100){
-		e = "cien";
-	}else if(c==1){
-		f = "ciento ";
-	};
-	
-	if(b>1 && c==0 && d==0){
-		f = uni[b] + "cientos ";
+	if (aa==1000){
+		f = "mil";
 		e = "";
-	}else if(b>1 && c>0 && d>0){
-		f = uni[b] + "cientos ";
+	}else{
+		b = aa/100;
+		c = (aa/10)%10;
+		d = aa%10;
+		
+		if(a<10 || b>0){
+			e = uni[d];
+		}
+		
+		if(c==1 && d>=1 && d<=5){
+			e = diez[d];
+		};
+		
+		if(c==1 && d>5){
+			e = "dieci"+uni[d];
+		}
+		
+		if(c==2 && d>0){
+			e = "veinti"+uni[d];
+		}
+		
+		if(c>0 && d==0){
+			e = dec[c];
+		}else if(c>0 && c!=1 && c!=2 && d>0){
+			e = dec[c] + " y " + uni[d];
+		};
+		
+		f = "";
+		if(aa==100){
+			e = "cien";
+		}else if(aa>100){
+			f = "ciento ";
+		};
+		
+		if(b>1 && c==0 && d==0){
+			f = uni[b] + "cientos ";
+			e = "";
+		}else if(b>1){
+			f = uni[b] + "cientos ";
+		}
+		
+		if(b==5 || b==7 || b==9){
+			f = cen[b];
+		}
+		
 	}
 	
-	
-	
-	
+	if(z == 0){
+		e = "cero " + e;
+	}
 	
 	cout<<f<<e;
+	delete[] uni;
+	delete[] diez;
+	delete[] dec;
+	delete[] cen;
+	
 };
 
 int pro7(){
-	cout<<"---Conversor de enteros con decimal a letras--\n\n";
+	cout<<"No hago nada :v";
 };
 
 int pro8(){
@@ -568,6 +587,11 @@ int pro20(){
 	cout<<"Hola";
 };
 
+int flo_in(int jmsm){
+	d = jmsm%1000;
+	z = (jmsm/10)%10;
+}
+
 int menu(int jul){
 	system("cls");
 	switch (jul){
@@ -587,10 +611,20 @@ int menu(int jul){
 			pro5();
 		break;
 		case 6:
-			pro6();
+			cout<<"---------Conversor de arabigos a letras--------\n\n";
+			cout<<"Ingresa un numero menor o igual a 1000: ";
+			cin>>a;
+			pro6(a);
 		break;
 		case 7:
-			pro7();
+			cout<<"--Conversor de arabigos con decimales a letras--\n\n";
+			cout<<"Ingresa un numero menor o igual a 1000 con dos decimales: ";
+			cin>>h;
+			pro6(h);
+			h *= 100;
+			flo_in(h);
+			cout<<" punto ";
+			pro6(d);
 		break;
 		case 8:
 			pro8();
@@ -669,7 +703,7 @@ int main(){
 		cin>>fin;
 		if(fin=='s' || fin =='S'){
 			system("cls");
-			a = 0, b = 0, c = 0, d = 0;
+			a = 0, b = 0, c = 0, d = 0, z = 1;
 			e = "", f = "", g = "";
 			h = 0, i = 0, j = 0;
 		}
