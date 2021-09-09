@@ -4,7 +4,6 @@
 #include <cmath>
 
 using namespace std;
-	
 	int a, b, c, d, z;
 	string e, f, g;
 	float h, i, j;
@@ -111,7 +110,80 @@ int pro4(){
 };
 
 int pro5(){
-	cout<<"--------Conversor de arabigos a romanos-------";
+	
+	cout<<"--------Conversor de arabigos a romanos-------\n\n";
+	cout<<"Ingrese numero entero positivo: ";
+	cin>>a;
+	if(a<=0 || a>1000){
+		do{
+			cout<<"Ingresa un numero valido por favor: ";
+			cin>>a;
+		}while(a<=0 || a>1000);
+	}
+	
+
+	
+	if(a==1000){
+	e += "M";
+	a -= 1000;
+	}else if(a>=900){
+		e += "CM";
+		a -= 900;
+	}
+	
+
+	
+	if(a>=500){
+		e += "D";
+		a -= 500;
+	}else if(a>=400){
+		e += "CD";
+		a -= 400;
+	}
+	
+	while(a>=100 || a>=90){
+		if(a>=100){
+			e += "C";
+			a -= 100;
+		}else if(a>=90){
+			e += "XC";
+			a -= 90;
+		}
+	}
+	
+	if(a>=50){
+		e += "L";
+		a -= 50;
+	}else if(a>=40){
+		e += "XL";
+		a -= 40;
+	}
+	
+	while(a>=10 || a>=9){
+		if(a>=10){
+			e += "X";
+			a -= 10;
+		}else if(a>=9){
+			e += "IV";
+			a -= 9;
+		}
+	}
+		
+	if(a>=5){
+		e += "V";
+		a -= 5;
+	}else if(a>=4){
+		e += "IV";
+		a -= 4;
+	}
+	
+	while(a>=1){
+		e += "I";
+		a--;
+	}
+	
+	cout<<e;
+	
 };
 
 int pro6(int aa){
@@ -209,7 +281,7 @@ int pro6(int aa){
 		
 	}
 	
-	if(z == 0){
+	if(z == 0 && aa<10){
 		e = "cero " + e;
 	}
 	
@@ -221,9 +293,12 @@ int pro6(int aa){
 	
 };
 
-int pro7(){
-	cout<<"No hago nada :v";
-};
+int pro7(int jmsm){
+	//Obtención de decimales :v 
+	d = jmsm%100;
+	z = (jmsm/10)%10;
+}
+
 
 int pro8(){
 	cout<<"------------Tabla de Multiplicar--------------\n\n";
@@ -391,37 +466,37 @@ int pro13(){
 	e = "----------Figuras geometricas basicas---------\n";
 	system("color 2f");
 	cout<<e<<endl;
-	cout<<"........."<<endl;
-	cout<<"........."<<endl;
-	cout<<"........."<<endl;
-	cout<<"........."<<endl;
+	cout<<"                ........."<<endl;
+	cout<<"                ........."<<endl;
+	cout<<"                ........."<<endl;
+	cout<<"                ........."<<endl;
 	Sleep(2000);
 	system("cls");
 	system("color 3f");
 	cout<<e<<endl;
-	cout<<"    ."<<endl;
-	cout<<"   ..."<<endl;
-	cout<<"  ....."<<endl;
-	cout<<" ......."<<endl;
-	cout<<"........."<<endl;
+	cout<<"                  ."<<endl;
+	cout<<"                   ..."<<endl;
+	cout<<"                  ....."<<endl;
+	cout<<"                 ......."<<endl;
+	cout<<"                ........."<<endl;
 	Sleep(2000);
 	system("cls");
 	system("color 4f");
 	cout<<e<<endl;
-	cout<<" ........."<<endl;
-	cout<<"..........."<<endl;
-	cout<<" ........."<<endl;
+	cout<<"                 ........."<<endl;
+	cout<<"                ..........."<<endl;
+	cout<<"                 ........."<<endl;
 	Sleep(2000);
 	system("cls");
 	system("color 5f");
 	cout<<e<<endl;
-	cout<<"   ."<<endl;
-	cout<<"  ..."<<endl;
-	cout<<" ....."<<endl;
-	cout<<"......."<<endl;
-	cout<<" ....."<<endl;
-	cout<<"  ..."<<endl;
-	cout<<"   ."<<endl;
+	cout<<"                      ."<<endl;
+	cout<<"                     ..."<<endl;
+	cout<<"                    ....."<<endl;
+	cout<<"                   ......."<<endl;
+	cout<<"                    ....."<<endl;
+	cout<<"                     ..."<<endl;
+	cout<<"                      ."<<endl;
 	system("pause");
 	system("color 0f");
 };
@@ -573,24 +648,54 @@ int pro16(){
 };
 
 int pro17(){
-	cout<<"Hola";
+	cout<<"---------------------Hora---------------------\n\n";
+	system("time /t");
 };
 int pro18(){
-	cout<<"Hola";
+	cout<<"---------------------Fecha--------------------\n\n";
+	system("date /t");
 };
 
 int pro19(){
-	cout<<"Hola";
+	e = "----------------------Alarma?------------------\n\n";
+	cout<<e;
+	cout<<"Ingresa los minutos para que finalice la alarma: ";
+	cin>>a;
+	for(int i=a-1; i>=0; i--){
+		for(int ii=59; ii>=0; ii--){
+			system("cls");
+			cout<<e<<"Tiempo restante... "<<i<<":"<<ii;
+			Sleep(1000);
+			if(ii<=5 && ii%2==0){
+				system("color cf");
+			}else if(ii<=5){
+				system("color fc");
+			}
+		}
+	}
+	system("color 0f");
 };
 
 int pro20(){
-	cout<<"Hola";
+	cout<<"-------------------------?-------------------\n\n";
+	
+	for(int i=0; i<5; i++){
+		e = ".";
+		for(int col=1; col<=100; col++){
+			e += ".";
+			cout<<e<<endl;
+			Sleep(1);
+		}
+		
+		for(int col0=100; col0>=1; col0--){
+			cout<<e.substr(0,col0) <<endl;
+			Sleep(1);
+		}
+		
+	}
+	
 };
 
-int flo_in(int jmsm){
-	d = jmsm%1000;
-	z = (jmsm/10)%10;
-}
 
 int menu(int jul){
 	system("cls");
@@ -622,7 +727,7 @@ int menu(int jul){
 			cin>>h;
 			pro6(h);
 			h *= 100;
-			flo_in(h);
+			pro7(h);
 			cout<<" punto ";
 			pro6(d);
 		break;
@@ -691,15 +796,15 @@ int main(){
 		cout<<"Punto por toda la pantalla ................. 14"<<endl;
 		cout<<"Simulador de cajero automatico ............. 15"<<endl;
 		cout<<"Calculo de hipotenusa ...................... 16"<<endl;
-		cout<<"? .......................................... 17"<<endl;
-		cout<<"? .......................................... 18"<<endl;
-		cout<<"? .......................................... 19"<<endl;
+		cout<<"Hora ....................................... 17"<<endl;
+		cout<<"Fecha ...................................... 18"<<endl;
+		cout<<"Alarma xD................................... 19"<<endl;
 		cout<<"? .......................................... 20"<<endl;
 		
 		cout<<"\nIngresa la opcion escogida (Numero): ";
 		cin>>inicio;
 		menu(inicio);
-		cout<<"\n\n\nDeseas regresar al menu (s/n)? ";
+		cout<<"\n\n\n\nDeseas regresar al menu (s/n)? ";
 		cin>>fin;
 		if(fin=='s' || fin =='S'){
 			system("cls");
@@ -708,7 +813,7 @@ int main(){
 			h = 0, i = 0, j = 0;
 		}
 	}while(fin=='s' || fin =='S');
-	cout<<"Adios"<<endl;
+	cout<<"\n\nAdios"<<endl;
 	system("pause");
 	return 0;
 };
