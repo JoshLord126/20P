@@ -827,6 +827,7 @@ int main(){
 			cout<<"Fecha ...................................... 18"<<endl;
 			cout<<"Alarma xD................................... 19"<<endl;
 			cout<<"? .......................................... 20"<<endl;
+			cout<<"                            By Josue Chuc (UMG)"<<endl;
 			cout<<"\nIngresa la opcion escogida (Numero): ";
 			cin>>inicio;
 			menu(inicio);
@@ -842,7 +843,7 @@ int main(){
 			}
 		}while(fin=='s' || fin =='S');
 		
-		cout<<"\n\nAdios"<<endl;
+		cout<<"\n\nAdios\n\nCopyright (c) 2021 JoshLord126\nAll Rights Reserved\n"<<endl;
 		system("pause");
 		return 0;
 		
