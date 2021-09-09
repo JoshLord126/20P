@@ -85,8 +85,6 @@ int pro3(){
 			}
 		break;
 	}
-	
-	
 };
 
 int pro4(){
@@ -110,7 +108,6 @@ int pro4(){
 };
 
 int pro5(){
-	
 	cout<<"--------Conversor de arabigos a romanos-------\n\n";
 	cout<<"Ingrese numero entero positivo: ";
 	cin>>a;
@@ -121,8 +118,6 @@ int pro5(){
 		}while(a<=0 || a>1000);
 	}
 	
-
-	
 	if(a==1000){
 	e += "M";
 	a -= 1000;
@@ -130,8 +125,6 @@ int pro5(){
 		e += "CM";
 		a -= 900;
 	}
-	
-
 	
 	if(a>=500){
 		e += "D";
@@ -183,7 +176,6 @@ int pro5(){
 	}
 	
 	cout<<e;
-	
 };
 
 int pro6(int aa){
@@ -220,8 +212,6 @@ int pro6(int aa){
 	cen[5] = "quinientos ";
 	cen[7] = "setecientos ";
 	cen[9] = "novecientos ";
-	
-	
 	
 	if(aa>1001 || aa<0){
 		do{
@@ -278,7 +268,6 @@ int pro6(int aa){
 		if(b==5 || b==7 || b==9){
 			f = cen[b];
 		}
-		
 	}
 	
 	if(z == 0 && aa<10){
@@ -290,7 +279,6 @@ int pro6(int aa){
 	delete[] diez;
 	delete[] dec;
 	delete[] cen;
-	
 };
 
 int pro7(int jmsm){
@@ -327,17 +315,21 @@ int pro10(){
 	cout<<"--------Multiplicación de forma grafica--------\n\nIngresa numeros menores a 100..."<<endl;
 	system("pause");
 	system("cls");
+	
 	cout<<"--------Multiplicación de forma grafica--------\n\n";
 	cout<<"1# Ingresa un numero: ";
 	cin>>num1; 
+	
 	if(num1>=100){
 		do{
 			cout<<"Ingresa un numero valido... ";
 			cin>>num1;
 		}while(num1>=100);
 	}
+	
 	cout<<"2# Ingresa un numero: ";
 	cin>>num2; 
+	
 	if(num2>=100){
 		do{
 			cout<<"Ingresa un numero valido... ";
@@ -368,6 +360,7 @@ int pro10(){
 		mul[1] = num2%10;
 		apo1 = mul[1]*num1;
 		apo2 = mul[0]*num1;
+		
 		cout<<"------------"<<endl;	
 		
 		if(apo1>=100){
@@ -390,6 +383,7 @@ int pro10(){
 	}
 
 	apo1 = num1*num2;
+	
 	if(apo1>=1000){
 		e = "  ";
 	}else if(apo1>=100){
@@ -402,6 +396,7 @@ int pro10(){
 	
 	cout<<"------------"<<endl;
 	cout<<e<<apo1;
+	
 	delete[] mul;
 };
 
@@ -409,6 +404,7 @@ int pro11(){
 	cout<<"-------Conversor de decimales a binario-------\n\n";
 	cout<<"Ingresa un numero entero positivo: ";
 	cin>>a; 
+	
 	if(a<0){
 		do{
 			cout<<"Ingresa un numero correcto: ";
@@ -424,6 +420,7 @@ int pro11(){
 		a = a/2;
 		e = f + e;
 	}
+	
 	cout<<"Resultado en binario: "<<e;
 }
 
@@ -440,6 +437,7 @@ int pro12(){
 	cout<<"------Conversor de decimales a hexadecimal------\n\n";
 	cout<<"Ingresa un numero entero positivo: ";
 	cin>>a; 
+	
 	if(a<0){
 		do{
 			cout<<"Ingresa un numero correcto: ";
@@ -458,7 +456,9 @@ int pro12(){
 		a = a/16;
 		e = f + e;
 	}
+	
 	cout<<"Resultado en hexadecimal: "<<e;
+	
 	delete[] hex;
 };
 
@@ -473,6 +473,7 @@ int pro13(){
 	Sleep(2000);
 	system("cls");
 	system("color 3f");
+	
 	cout<<e<<endl;
 	cout<<"                  ."<<endl;
 	cout<<"                   ..."<<endl;
@@ -482,6 +483,7 @@ int pro13(){
 	Sleep(2000);
 	system("cls");
 	system("color 4f");
+	
 	cout<<e<<endl;
 	cout<<"                 ........."<<endl;
 	cout<<"                ..........."<<endl;
@@ -489,6 +491,7 @@ int pro13(){
 	Sleep(2000);
 	system("cls");
 	system("color 5f");
+	
 	cout<<e<<endl;
 	cout<<"                      ."<<endl;
 	cout<<"                     ..."<<endl;
@@ -507,12 +510,12 @@ int pro14(){
 	punt = new char [100];
 	a = 1;
 	b = 5;
+	
 	for(int i=0; i<100; i++){
 		punt [i] = ' ';
 	}
-	do{
-		
 	
+	do{
 		while(a<b){
 			a+=2;
 			for(int i=1; i<100; i++){
@@ -545,9 +548,11 @@ int pro14(){
 		}
 		
 		b+=5;
+		
 		cout<<"Deseas continuar? s/n: ";
 		cin>>mj;
 	}while(mj=='s' || mj=='S');
+	
 	delete[] punt;
 };
 
@@ -557,67 +562,79 @@ int pro15(){
 	char tip, mj;
 	int tot = 0;
 	string caj = "--------Simulador de cajero automatico--------\n\n";
+	
 	cout<<caj<<endl;
 	cout<<"\nInformacion importante: "<<endl;
 	cout<<"Codigo: 1234\n"<<"Tipo de cuenta: Monetaria\n"<<"Monto disponible: Q500\n\n";
 	system("pause");
 	system("cls");
+	
 	cout<<caj<<endl;
 	cout<<"Inserte tarjeta (ins): ";
 	cin>>e;
+	
 	if(e!="ins"){
 		do{
 			cout<<"Inserte de forma correcta la tarjeta por favor... ";
 			cin>>e;
 		}while(e!="ins");
 	}
+	
 	system("cls");
 	cout<<caj<<"\nBienvenido"<<endl;
 	cout<<"Ingrese codigo: ";
 	cin>>a;
+	
 	if(a!=1234){
 		do{
 			cout<<"Codigo incorrecto, ingreselo de nuevo: ";
 			cin>>a;
+			
 			b++;
 		}while(b!=3);
+		
 		if(b==3){
 			system("cls");
 			cout<<caj<<"\nPor la seguridad de su cuenta, la misma se ha desactivado.\nMotivo: intentos maximos excedidos";
+			
 			b = 0;
 			system("pause");
 		}
 	}
+	
 	if(b!=0){
 		do{
-		system("cls");
-		cout<<caj<<"\nEscoja el tipo de cuenta"<<endl;
-		cout<<"Montaria ........... M\nAhorro.............. A\n\nIngrese el tipo de cuenta: ";
-		cin>>tip;
-		if(tip=='M' || tip=='m'){
 			system("cls");
-			cout<<caj<<"\nCuenta Monetaria\n\nIngrese el monto a retirar: ";
-			cin>>a;
-			if(a>c){
-				cout<<"Monto a retirar excede el monto en su cuenta";
-			}else if(a<1){
-				cout<<"Monto a retirar debe ser mayor a 0";
-			}else if(a%100!=0){
-				cout<<"Monto invalido. Recuerde que unicamente se brindan billetes con valor a Q.100";
+			cout<<caj<<"\nEscoja el tipo de cuenta"<<endl;
+			cout<<"Montaria ........... M\nAhorro.............. A\n\nIngrese el tipo de cuenta: ";
+			cin>>tip;
+			
+			if(tip=='M' || tip=='m'){
+				system("cls");
+				cout<<caj<<"\nCuenta Monetaria\n\nIngrese el monto a retirar: ";
+				cin>>a;
+				
+				if(a>c){
+					cout<<"Monto a retirar excede el monto en su cuenta";
+				}else if(a<1){
+					cout<<"Monto a retirar debe ser mayor a 0";
+				}else if(a%100!=0){
+					cout<<"Monto invalido. Recuerde que unicamente se brindan billetes con valor a Q.100";
+				}else{
+					cout<<"Tome su dinero";
+					tot += a;
+					stringstream ss;
+					ss << a;
+					ss >> f; 
+					c -= a;
+					g += f;
+				}
 			}else{
-				cout<<"Tome su dinero";
-				tot += a;
-				stringstream ss;
-				ss << a;
-				ss >> f; 
-				c -= a;
-				g += f;
+				cout<<"\nNo cuenta con este tipo de cuenta activa";
 			}
-		}else{
-			cout<<"\nNo cuenta con este tipo de cuenta activa";
-		}
-		cout<<"\nDesea realizar otra transaccion? s/n: ";
-		cin>>mj;
+			
+			cout<<"\nDesea realizar otra transaccion? s/n: ";
+			cin>>mj;
 		}while(mj=='s' || mj=='S');
 		
 		
@@ -628,6 +645,7 @@ int pro15(){
 		for(int i=0;i<g.length();i+=3){
 			cout<<"Retiro ................................ Q. "<<g.substr(i,3)<<endl;
 		}
+		
 		cout<<"\nTotal ................................. Q. "<<tot<<endl;
 		cout<<"\nHora: ";
 		system("time /t");
@@ -635,6 +653,7 @@ int pro15(){
 		system("date /t");
 		cout<<"\n\nGracias por preferirnos";
 	}
+	
 	g = "";
 };
 
@@ -661,11 +680,13 @@ int pro19(){
 	cout<<e;
 	cout<<"Ingresa los minutos para que finalice la alarma: ";
 	cin>>a;
+	
 	for(int i=a-1; i>=0; i--){
 		for(int ii=59; ii>=0; ii--){
 			system("cls");
 			cout<<e<<"Tiempo restante... "<<i<<":"<<ii;
 			Sleep(1000);
+			
 			if(ii<=5 && ii%2==0){
 				system("color cf");
 			}else if(ii<=5){
@@ -699,6 +720,7 @@ int pro20(){
 
 int menu(int jul){
 	system("cls");
+	
 	switch (jul){
 		case 1:
 			pro1();
@@ -725,10 +747,13 @@ int menu(int jul){
 			cout<<"--Conversor de arabigos con decimales a letras--\n\n";
 			cout<<"Ingresa un numero menor o igual a 1000 con dos decimales: ";
 			cin>>h;
+			
 			pro6(h);
 			h *= 100;
 			pro7(h);
+			
 			cout<<" punto ";
+			
 			pro6(d);
 		break;
 		case 8:
@@ -775,45 +800,53 @@ int menu(int jul){
 }
 
 int main(){
-	char fin;
-	int inicio;
-	do{
-		cout<<"------------------Bienvenido------------------\n\nEscoge una de las siguientes opciones: ";
+	try{
 		
-		cout<<"\nSuma, resta, mulplicacion y division ....... 1"<<endl;
-		cout<<"Numero impar o par? ........................ 2"<<endl;
-		cout<<"Conversor de unidades ...................... 3"<<endl;
-		cout<<"Palindromo? ................................ 4"<<endl;
-		cout<<"Conversor de arabigos a romanos ............ 5"<<endl;
-		cout<<"Conversor de enteros a letras .............. 6"<<endl;
-		cout<<"Conversor de enteros con decimal a letras .. 7"<<endl;
-		cout<<"Tabla de multiplicar ....................... 8"<<endl;
-		cout<<"Tablas de multpliar del 1 al 10 ............ 9"<<endl;
-		cout<<"Multiplicación de forma grafica ............ 10"<<endl;
-		cout<<"Conversor de decimales a binario ........... 11"<<endl;
-		cout<<"Conversor de decimales a hexadecimal ....... 12"<<endl;
-		cout<<"Figuras geometricas basicas ................ 13"<<endl;
-		cout<<"Punto por toda la pantalla ................. 14"<<endl;
-		cout<<"Simulador de cajero automatico ............. 15"<<endl;
-		cout<<"Calculo de hipotenusa ...................... 16"<<endl;
-		cout<<"Hora ....................................... 17"<<endl;
-		cout<<"Fecha ...................................... 18"<<endl;
-		cout<<"Alarma xD................................... 19"<<endl;
-		cout<<"? .......................................... 20"<<endl;
 		
-		cout<<"\nIngresa la opcion escogida (Numero): ";
-		cin>>inicio;
-		menu(inicio);
-		cout<<"\n\n\n\nDeseas regresar al menu (s/n)? ";
-		cin>>fin;
-		if(fin=='s' || fin =='S'){
-			system("cls");
-			a = 0, b = 0, c = 0, d = 0, z = 1;
-			e = "", f = "", g = "";
-			h = 0, i = 0, j = 0;
-		}
-	}while(fin=='s' || fin =='S');
-	cout<<"\n\nAdios"<<endl;
-	system("pause");
-	return 0;
+		char fin;
+		int inicio;
+		do{
+			cout<<"------------------Bienvenido------------------\n\nEscoge una de las siguientes opciones: ";
+			cout<<"\nSuma, resta, mulplicacion y division ....... 1"<<endl;
+			cout<<"Numero impar o par? ........................ 2"<<endl;
+			cout<<"Conversor de unidades ...................... 3"<<endl;
+			cout<<"Palindromo? ................................ 4"<<endl;
+			cout<<"Conversor de arabigos a romanos ............ 5"<<endl;
+			cout<<"Conversor de enteros a letras .............. 6"<<endl;
+			cout<<"Conversor de enteros con decimal a letras .. 7"<<endl;
+			cout<<"Tabla de multiplicar ....................... 8"<<endl;
+			cout<<"Tablas de multpliar del 1 al 10 ............ 9"<<endl;
+			cout<<"Multiplicación de forma grafica ............ 10"<<endl;
+			cout<<"Conversor de decimales a binario ........... 11"<<endl;
+			cout<<"Conversor de decimales a hexadecimal ....... 12"<<endl;
+			cout<<"Figuras geometricas basicas ................ 13"<<endl;
+			cout<<"Punto por toda la pantalla ................. 14"<<endl;
+			cout<<"Simulador de cajero automatico ............. 15"<<endl;
+			cout<<"Calculo de hipotenusa ...................... 16"<<endl;
+			cout<<"Hora ....................................... 17"<<endl;
+			cout<<"Fecha ...................................... 18"<<endl;
+			cout<<"Alarma xD................................... 19"<<endl;
+			cout<<"? .......................................... 20"<<endl;
+			cout<<"\nIngresa la opcion escogida (Numero): ";
+			cin>>inicio;
+			menu(inicio);
+			
+			cout<<"\n\n\n\nDeseas regresar al menu (s/n)? ";
+			cin>>fin;
+			
+			if(fin=='s' || fin =='S'){
+				system("cls");
+				a = 0, b = 0, c = 0, d = 0, z = 1;
+				e = "", f = "", g = "";
+				h = 0, i = 0, j = 0;
+			}
+		}while(fin=='s' || fin =='S');
+		
+		cout<<"\n\nAdios"<<endl;
+		system("pause");
+		return 0;
+		
+	}catch(int falle){
+		cout<<"No se que paso, adios :)";
+	}
 };
